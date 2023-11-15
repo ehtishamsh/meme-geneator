@@ -65,4 +65,8 @@ form button {
   line-height: normal;
   letter-spacing: -0.3px;
   cursor: pointer;
+  margin-bottom: 30px;
+}
+.meme--image {
+  max-width: 100%;
 }

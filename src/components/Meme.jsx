@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import DataObj from "./MemeData.js";
 
 function Meme() {
-  const [url, setUrl] = useState("");
-
+  const [meme, setMeme] = useState({
+    topText: "",
+    bottomText: "",
+    randomImg: "http://i.imgflip.com/1bij.jpg",
+  });
+  const [allMemeImages, setallMemeImages] = useState(DataObj);
   function handleClick(e) {
-    const dataMemes = DataObj.data.memes;
+    const dataMemes = allMemeImages.data.memes;
     const getUrl =
       dataMemes[Math.floor(Math.random() * dataMemes.length + 1)].url;
-    setUrl(getUrl);
+    setMeme((prev) => {
+      return { ...prev, randomImg: getUrl };
+    });
     e.preventDefault();
   }
   return (
@@ -18,7 +24,7 @@ function Meme() {
         <input type="text" placeholder="Bottom Text" />
       </div>
       <button onClick={handleClick}>Get a new meme image 🖼️</button>
-      <img src={url} alt="" />
+      <img src={meme.randomImg} alt="" className="meme--image" />
     </form>
   );
 }
