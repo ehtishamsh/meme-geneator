@@ -7,13 +7,13 @@ function Meme() {
     bottomText: "",
     randomImg: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImages, setallMemeImages] = useState(DataObj);
+  const [allImagesData, setAllimagesData] = useState(DataObj);
+
   function handleClick(e) {
-    const dataMemes = allMemeImages.data.memes;
-    const getUrl =
-      dataMemes[Math.floor(Math.random() * dataMemes.length + 1)].url;
+    const data = allImagesData.data.memes;
+    const url = data[Math.floor(Math.random() * data.length + 1)].url;
     setMeme((prev) => {
-      return { ...prev, randomImg: getUrl };
+      return { ...prev, randomImg: url };
     });
     e.preventDefault();
   }
