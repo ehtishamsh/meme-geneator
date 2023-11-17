@@ -66,6 +66,37 @@ form button {
   cursor: pointer;
   margin-bottom: 30px;
 }
-.meme--image {
+.imgCon {
+  position: relative;
+}
+.imgCon img {
   max-width: 100%;
+  border-radius: 3px;
+}
+.memeText {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
+    2px 2px 5px #000;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  margin: 15px 0;
+  padding: 0 5px;
+  letter-spacing: 1.5px;
+}
+
+.topText {
+  position: absolute;
+  top: 0;
+}
+.bottomText {
+  position: absolute;
+  bottom: 0;
 }
